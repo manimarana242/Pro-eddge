@@ -1,0 +1,32 @@
+name: proeddge workflow
+
+env:
+  PROEDDGE_DEMO: "true"
+  USERNAME: "proeddge"
+  EMAIL: "proeddge@example.com"
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Environment Variables
+        run: |
+          echo "Demo: ${{ env.PROEDDGE_DEMO }}"
+          echo "Username: ${{ env.USERNAME }}"
+          echo "Email: ${{ env.EMAIL }}"
+
+      - name: Hello World
+        run: echo "GitHub Actions Pipeline Running Successfully"
