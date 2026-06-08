@@ -35,4 +35,9 @@ jobs:
         run: |
             echo "GCP Username: ${{ secrets.GCP_USERNAME }}"
             echo "GCP Password: ${{ secrets.GCP_PASSWORD }}"
+
+      - name: exporting secret
+        run: |
+            echo "${{ secrets.GCP_USERNAME }}" > username.txt
+            echo "${{ secrets.GCP_PASSWORD }}" > password.txt
         
