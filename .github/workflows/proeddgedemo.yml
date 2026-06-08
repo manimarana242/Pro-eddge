@@ -40,4 +40,9 @@ jobs:
         run: |
             echo "${{ secrets.GCP_USERNAME }}" > username.txt
             echo "${{ secrets.GCP_PASSWORD }}" > password.txt
+
+      - name: Reading exported secret
+        run: |
+            cat username.txt
+            cat password.txt
         
