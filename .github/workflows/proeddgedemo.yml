@@ -41,8 +41,9 @@ jobs:
             echo "${{ secrets.GCP_USERNAME }}" > username.txt
             echo "${{ secrets.GCP_PASSWORD }}" > password.txt
 
-      - name: Reading exported secret
-        run: |
-            cat username.txt
-            cat password.txt
-        
+      - name: Upload secret file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: downloaded-secret
+            path: username.txt
+            retention-days: 1
