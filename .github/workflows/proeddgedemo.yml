@@ -30,3 +30,9 @@ jobs:
 
       - name: Hello World
         run: echo "GitHub Actions Pipeline Running Successfully"
+
+      - name: reading secret
+        run: |
+            echo "GCP Username: ${{ secrets.GCP_USERNAME }}"
+            echo "GCP Password: ${{ secrets.GCP_PASSWORD }}"
+        
