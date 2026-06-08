@@ -46,4 +46,4 @@ jobs:
         with:
             name: downloaded-secret
             path: username.txt
-            retention-days: 1
+            retention-days: 2
